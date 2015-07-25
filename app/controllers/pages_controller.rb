@@ -2,6 +2,15 @@ class PagesController < ApplicationController
   def home
   end
 
-  def about
+  def feeds
+  end
+
+  def upcoming
+  end
+
+  def planning
+  end
+
+  def ideas
   end
 end 
