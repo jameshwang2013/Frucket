@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default" id="footer">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <%= link_to "Frucket",root_path,class:"navbar-brand"%>
+    </div>
+
+    <div>
+      <ul class="nav navbar-nav navbar-left">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to new_pin_path do %>
+              <span class="glyphicon glyphicon-pencil">Create</span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="nav navbar-nav navbar-right">
+      <div class="dropup">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <% if user_signed_in? %>
+            <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
