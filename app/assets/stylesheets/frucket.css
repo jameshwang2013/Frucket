@@ -1,0 +1,10 @@
+#footer {
+   position:fixed;
+   bottom:0px;
+   width:100%;
+}
+
+.center-create {
+  margin-left: auto;
+  margin-right: auto;
+}
