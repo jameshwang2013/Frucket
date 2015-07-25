@@ -27,8 +27,8 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
           <% if user_signed_in? %>
-            <li><%= link_to "Account Settings lalalaalaalalalalaa", edit_user_registration_path %></li>
-            <li><%= link_to "Log Out kalaaalalalalal", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           <% end %>
         </ul>
       </div>
