@@ -30,7 +30,8 @@
 }
 
 #create-action {
-	margin: auto;
+	padding-top: .7%;
+	padding-left: 12%;
 }
 
 #settings {
@@ -40,6 +41,7 @@
 
 #frucket-logo {
 	padding-left: 7.5%;
+	font-size: 30px;
 }
 
 
