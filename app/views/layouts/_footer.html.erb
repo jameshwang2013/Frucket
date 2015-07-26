@@ -4,17 +4,11 @@
       <%= link_to "frucket", about_path,class:"navbar-brand"%>
     </div>
 
-    <div style="float:left; display:inline-block; margin-left: 21%; white-space:nowrap; overflow:hidden;">  
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to new_pin_path do %>
-                <span class="glyphicon glyphicon-plus-sign">Create</span>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <button type="button" class="btn btn-success" style="float:left; display:inline-block; margin-left: 21%; margin-top: 0.75%; white-space:nowrap; overflow:hidden;">
+      <% if user_signed_in? %>
+          <span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal">Create</span>
+      <% end %>
+    </button>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="nav navbar-right" style="margin-top:0.75%; float:right;">
