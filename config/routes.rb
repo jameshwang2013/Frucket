@@ -3,10 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   root "pins#index"
-  get "feeds" => "pages#feeds"
-  get "upcoming" => "pages#upcoming"
-  get "planning" => "pages#planning"
-  get "ideas" => "pages#ideas"
+  get "upcoming" => "pins#upcoming"
+  get "planning" => "pins#planning"
+  get "ideas" => "pins#ideas"
   get "about" => "pages#about"
 
   # The priority is based upon order of creation: first created -> highest priority.
