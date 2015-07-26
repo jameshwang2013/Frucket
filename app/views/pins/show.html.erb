@@ -1,5 +1,4 @@
 <div class="menu-button">
-  <%= link_to 'Back', pins_path %>
 
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
@@ -9,11 +8,13 @@
           <%= image_tag @pin.image.url(:medium) %>
         </div>
 
-        <div class="panel-body">
+        <div class="panel-body" style="text-align:center">
           <p><%= @pin.title %></p>
-          <p><%= @pin.description %></p>
-          <p><%= @pin.location %></p>
-          <p><strong><%= @pin.user.name if @pin.user %></strong></p>
+          <p style="font-size:80%"><%= @pin.description %>
+            <br>
+          <%= @pin.location %>
+            <br>
+          <%= @pin.user.name if @pin.user %></p>
 
           <% if current_user && (@pin.user == current_user) %>
       			<%= link_to edit_pin_path(@pin) do %>
@@ -25,7 +26,9 @@
     			<%= link_to @pin, method: :delete, data: { confirm: 'Are you sure sire?'} do %>
     				<span class="glyphicon glyphicon-trash"></span>
     				Delete
-    			<% end %>
+    			<% end %><br>
+
+          <%= link_to 'Back', pins_path %>
         </div>
 
       </div>

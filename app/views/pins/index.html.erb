@@ -7,9 +7,9 @@
       <div class="panel-body">
         
         <p><%= pin.title %></p>
-        <p><%= pin.description %></p>
-        <p><%= pin.location %></p>
-        <p><%= pin.user.name if pin.user %></p>
+        <p style="font-size:75%"><%= pin.location %>
+        <br>
+        <%= pin.user.name if pin.user %></p>
 <!--
         <% if current_user && (pin.user == current_user) %>
           <div class="actions">
