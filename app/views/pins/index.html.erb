@@ -1,31 +1,36 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<div id="pins" class="transitions-enabled">
-  <% @pins.each do |pin| %>
-    <div class="box panel panel-default">
-      <%= link_to (image_tag pin.image.url(:medium)), pin %>
-      <div class="panel-body">
-        
-        <p><%= pin.title %></p>
-        <p style="font-size:75%"><%= pin.location %>
-        <br>
-        <%= pin.user.name if pin.user %></p>
-<!--
-        <% if current_user && (pin.user == current_user) %>
-          <div class="actions">
-            <%= link_to edit_pin_path(pin) do %>
-              <span class="glyphicon glyphicon-edit"></span>
-              Edit
-            <% end %>
+<table class="table"><br><br><br>
+  <thead> 
+      <tr>
+        <th style="text-align:center">Feeds</th>
+      </tr>
+  </thead>
 
-            <%= link_to pin, method: :delete, data: { confirm: 'Delete?'} do %>
-              <span class="glyphicon glyphicon-trash"></span>
-              Delete
-            <% end %>
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr style="vertical-align:middle">
+        <td align="center">
+          <%= link_to (image_tag pin.image.url(:medium)), pin %>
+          <br><br><p align="center" style="font-size:150%"><%= pin.title %></p><p style="font-size:75%"><%= pin.location %><br><%= pin.user.name if pin.user %></p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- 
+  <div id="pins" class="transitions-enabled">
+    <% @pins.each do |pin| %>
+        <div class="box panel panel-default">
+          <%= link_to (image_tag pin.image.url(:medium)), pin %>
+          <div class="panel-body">
+              <p><%= pin.title %></p>
+              <p style="font-size:75%"><%= pin.location %>
+              <br>
+              <%= pin.user.name if pin.user %></p>
           </div>
-        <% end %>
+        </div>
+    <% end %>
+  </div>
 -->
-      </div>
-    </div>
-  <% end %>
-</div>

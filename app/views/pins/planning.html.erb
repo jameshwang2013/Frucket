@@ -1,17 +1,21 @@
 <div class="menu-button">
-	<h1>Planning</h1>
+	<table class="table">
+		<thead> 
+			<tr>
+				<th style="text-align:center">Upcoming</th>
+			</tr>
+		</thead>
 
-	<div id="pins" class="transitions-enabled">
-		<% @pins.each do |pin| %>
-		    <div class="box panel panel-default">
-		    	<%= link_to (image_tag pin.image.url(:medium)), pin %>
-		    	<div class="panel-body">
-			        <p><%= pin.title %></p>
-			        <p style="font-size:75%"><%= pin.location %>
-			        <br>
-			        <%= pin.user.name if pin.user %></p>
-		    	</div>
-		    </div>
-		<% end %>
-	</div>
+		<tbody>
+			<% @pins.each do |pin| %>
+				<tr style="vertical-align:middle">
+					<td align="center">
+					  <%= link_to (image_tag pin.image.url(:medium)), pin %>
+					  <br><br><p align="center" style="font-size:150%"><%= pin.title %></p><p style="font-size:75%"><%= pin.location %><br><%= pin.user.name if pin.user %></p>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+
+	</table>
 </div>
