@@ -1,35 +1,37 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container">
-    <div class="navbar-header navbar-left" style="float: left; display:inline-block; white-space:nowrap; overflow:hidden;">
-      <%= link_to "frucket", about_path,class:"navbar-brand"%>
-    </div>
+  <% if user_signed_in? %>
 
-    <div style="float:left; display:inline-block; margin-left: 21%; white-space:nowrap; overflow:hidden;">  
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to new_pin_path do %>
-                <span class="glyphicon glyphicon-plus-sign">Create</span>
-            <% end %>
-          </li>
-        <% end %>
+    <div class="container-fluid" display="inline-block">
+      <ul class="nav navbar-nav navbar-left" id="frucket-logo">
+        <li>
+          <%= link_to "frucket", about_path%>
+        </li>
       </ul>
+
+      <ul class="nav navbar-nav navbar-left" id="create-action">
+        <li>
+          <%= link_to new_pin_path do %>
+              <span class="glyphicon glyphicon-plus-sign"> Create</span>
+          <% end %>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" id="settings">
+        <ul class="dropup">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Settings
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <% if user_signed_in? %>
+              <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+            <% end %>
+          </ul>
+        </ul>
+      </ul>
+
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="nav navbar-right" style="margin-top:0.75%; float:right;">
-      <div class="dropup">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <% if user_signed_in? %>
-            <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div><!-- /.container-fluid -->
-  </div>
+  <% end %>
 </nav>
