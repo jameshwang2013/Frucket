@@ -1,28 +1,30 @@
-<%= link_to 'Back', pins_path %>
+<div class="menu-button">
+  <%= link_to 'Back', pins_path %>
 
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading center">
-        <%= image_tag @pin.image.url(:medium) %>
-      </div>
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading center">
+          <%= image_tag @pin.image.url(:medium) %>
+        </div>
 
-      <div class="panel-body">
-        <p><%= @pin.description %></p>
-        <p><strong><%= @pin.user.name if @pin.user %></strong></p>
+        <div class="panel-body">
+          <p><%= @pin.description %></p>
+          <p><strong><%= @pin.user.name if @pin.user %></strong></p>
 
-        <% if current_user && (@pin.user == current_user) %>
-    			<%= link_to edit_pin_path(@pin) do %>
-    				<span class="glyphicon glyphicon-edit"></span>
-    				Edit
-          <% end %>
-			  <% end %>
+          <% if current_user && (@pin.user == current_user) %>
+      			<%= link_to edit_pin_path(@pin) do %>
+      				<span class="glyphicon glyphicon-edit"></span>
+      				Edit
+            <% end %>
+  			  <% end %>
 
-  			<%= link_to @pin, method: :delete, data: { confirm: 'Are you sure sire?'} do %>
-  				<span class="glyphicon glyphicon-trash"></span>
-  				Delete
-  			<% end %>
+    			<%= link_to @pin, method: :delete, data: { confirm: 'Are you sure sire?'} do %>
+    				<span class="glyphicon glyphicon-trash"></span>
+    				Delete
+    			<% end %>
 
+        </div>
       </div>
     </div>
   </div>
