@@ -13,4 +13,7 @@ class PagesController < ApplicationController
 
   def ideas
   end
+
+  def about
+  end
 end 

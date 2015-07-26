@@ -8,3 +8,14 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.navbar-fixed-bottom {
+	background-color: #ffffff;
+	border-color: #eeeeee;
+	color: #e68a00;
+	font-family: Spinnaker;
+}
+
+.glyphicon.glyphicon-plus-sign {
+	color: #00A600;	
+}
