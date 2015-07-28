@@ -1,5 +1,3 @@
-# One Month Rails
+# Welcome to Frucket
 
-This is the pinteresting sample application for 
-[*One Month Rails*](http://onemonthrails.com)
-by [James Wang](http://frucket.com)
+Created by David Wang and James Wang
