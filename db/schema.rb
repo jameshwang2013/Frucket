@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 20150823190301) do
 
   create_table "events", force: :cascade do |t|
     t.string   "content"
-    t.integer  "buckets_id"
+    t.integer  "bucket_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.datetime "completed_at"
   end
 
-  add_index "events", ["buckets_id"], name: "index_events_on_buckets_id"
+  add_index "events", ["bucket_id"], name: "index_events_on_bucket_id"
 
   create_table "pins", force: :cascade do |t|
     t.string   "description"
