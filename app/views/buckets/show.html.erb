@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="bucket_title"><%= @bucket.title %></h2>
+<p class="bucket_sub_title"><%= @bucket.description %></p>
+
+<div id="todo_items_wrapper">
+	<%= render @bucket.events %>
+	<div id="form">
+		<%= render "events/form" %>
+	</div>
+</div>
+
+<div class="links">
+  <%= link_to 'Edit', edit_bucket_path(@bucket) %> |
+  <%= link_to 'Delete', bucket_path(@bucket), method: :delete, data: { confirm: "Are you sure?" } %> |
+  <%= link_to 'Back', buckets_path %>
+</div>
