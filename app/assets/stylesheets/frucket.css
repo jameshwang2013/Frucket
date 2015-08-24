@@ -8,11 +8,6 @@
    width:100%;
 }
 
-.center-create {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .navbar-fixed-bottom {
 	background-color: #ffffff;
 	border-color: #eeeeee;
@@ -27,10 +22,6 @@
 #prof-pic {
 	padding-right: 9.7%;
 	padding-left: 11.74%;
-}
-
-#menu-items {
-	padding-left: 7.5%;
 }
 
 #create-action {

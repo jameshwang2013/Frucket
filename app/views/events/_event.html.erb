@@ -9,7 +9,7 @@
 			<p style="opacity: 0.4;"><strike><%= event.content %></strike></p>
 		</div>
 		<div class="trash">
-			<%= link_to bucket_events_path(@bucket, event.id), method: :delete, data: {confirm: "Are you sure?" } do %>
+			<%= link_to bucket_event_path(@bucket, event.id), method: :delete, data: {confirm: "Are you sure?" } do %>
 				<i class="fa fa-trash"></i>
 			<% end %>
 		</div>
@@ -20,10 +20,10 @@
 			<% end %>
 		</div>
 		<div class="todo_item">
-			<p><%= todo_item.content %></p>
+			<p><%= event.content %></p>
 		</div>
 		<div class="trash">
-			<%= bucket_events_path(@bucket, event.id), method: :delete, data: {confirm: "Are you sure?" } do %>
+			<%= link_to bucket_event_path(@bucket, event.id), method: :delete, data: {confirm: "Are you sure?" } do %>
 				<i class="fa fa-trash"></i>
 			<% end %>		
 		</div>

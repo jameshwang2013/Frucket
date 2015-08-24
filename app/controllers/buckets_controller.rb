@@ -1,4 +1,4 @@
-  class BucketsController < ApplicationController
+class BucketsController < ApplicationController
   before_action :set_bucket, only: [:show, :edit, :update, :destroy]
 
   # GET /buckets
